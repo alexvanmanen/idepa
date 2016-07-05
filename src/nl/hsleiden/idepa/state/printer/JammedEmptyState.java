@@ -8,25 +8,25 @@ public class JammedEmptyState implements PrinterState {
 	}
 
 	@Override
-	public void print() {
-		// TODO Auto-generated method stub
+	public void print() throws StateException {
+		throw new StateException("Unable to print. Printer is jammed.");
 
 	}
 
 	@Override
-	public void finish() {
-		System.out.println("Unable to finish. Printer is jammed.");
+	public void finish() throws StateException {
+		throw new StateException("Unable to finish. Printer is jammed.");
 
 	}
 
 	@Override
-	public void cancel() {
-		System.out.println("No job to cancel.");
+	public void cancel() throws StateException {
+		throw new StateException("No job to cancel.");
 	}
 	
 	@Override
-	public void paperJam() {
-		System.out.println("Paper is already jammed. Nothing changed.");
+	public void paperJam() throws StateException {
+		throw new StateException("Paper is already jammed. Nothing changed.");
 	}
 
 	@Override

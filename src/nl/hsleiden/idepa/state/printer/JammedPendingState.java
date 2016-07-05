@@ -9,14 +9,14 @@ public class JammedPendingState implements PrinterState {
 	}
 
 	@Override
-	public void print() {
-		System.out.println("Unable to print. Printer is jammed.");
+	public void print() throws StateException {
+		throw new StateException("Unable to print. Printer is jammed.");
 
 	}
 
 	@Override
-	public void finish() {
-		System.out.println("Unable to finish. Printer is jammed.");
+	public void finish() throws StateException {
+		throw new StateException("Unable to finish. Printer is jammed.");
 	}
 
 	@Override
@@ -26,8 +26,8 @@ public class JammedPendingState implements PrinterState {
 	}
 
 	@Override
-	public void paperJam() {
-		System.out.println("Paper is already jammed. Nothing changed.");
+	public void paperJam() throws StateException{
+		throw new StateException("Paper is already jammed. Nothing changed.");
 	}
 
 	@Override

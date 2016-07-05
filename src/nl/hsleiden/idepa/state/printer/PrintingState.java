@@ -8,8 +8,8 @@ public class PrintingState implements PrinterState {
 	}
 
 	@Override
-	public void print() {
-		System.out.println("Already busy with printing");
+	public void print() throws StateException {
+		throw new StateException("Already busy with printing");
 
 	}
 
@@ -33,8 +33,8 @@ public class PrintingState implements PrinterState {
 	}
 
 	@Override
-	public void fix() {
-		System.out.println("Printer isn't broken. Unable to fix it");
+	public void fix() throws StateException {
+		throw new StateException("Printer isn't broken. Unable to fix it");
 	}
 
 	public String toString(){

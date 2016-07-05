@@ -15,8 +15,8 @@ public class ReadyState implements PrinterState {
 	}
 
 	@Override
-	public void finish() {
-		System.out.println("No job to finish.");
+	public void finish() throws StateException {
+		throw new StateException("No job to finish.");
 	}
 
 	public String toString() {
@@ -24,18 +24,18 @@ public class ReadyState implements PrinterState {
 	}
 
 	@Override
-	public void cancel() {
-		System.out.println("No job to cancel.");
+	public void cancel() throws StateException {
+		throw new StateException("No job to cancel.");
 	}
 
 	@Override
-	public void paperJam() {
-		System.out.println("Printer can't be jammed if it is in the ready state");
+	public void paperJam() throws StateException {
+		throw new StateException("Printer can't be jammed if it is in the ready state");
 	}
 
 	@Override
-	public void fix() {
-		System.out.println("Printer isn't broken. Unable to fix it");
+	public void fix() throws StateException {
+		throw new StateException("Printer isn't broken. Unable to fix it");
 	}
 
 }

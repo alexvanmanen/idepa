@@ -40,23 +40,23 @@ public class Printer {
 		return readyState;
 	}
 
-	public void print() {
+	public void print() throws StateException {
 		currentState.print();
 	}
 
-	public void finish() {
+	public void finish() throws StateException {
 		currentState.finish();
 	}
 
-	public void cancel() {
+	public void cancel() throws StateException{
 		currentState.cancel();
 	}
 
-	public void paperJam() {
+	public void paperJam() throws StateException{
 		currentState.paperJam();
 	}
 
-	public void fix() {
+	public void fix() throws StateException{
 		currentState.fix();
 
 	}
